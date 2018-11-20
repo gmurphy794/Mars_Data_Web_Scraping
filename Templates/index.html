@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <h2>Latest Mars News</h2>
+    <h4>{{ space.news[0].title }}</h4>
+    <p>{{ space.news[0].paragraph }}</p>
+    <section class="row">
+        <div class="col-md-8">
+          <article class="description-content">
+            <h2 class="description-header">Featured Image</h2>
+            <img src= "{{ space.jpl }}" alt="Featured Mars Image" style="height: 75%; width: 75%;"/>
+          </article>
+        </div>
+        <div class="col-md-4" style="border-width: 2px; border-color: green; border-style: solid;">
+            <h4>Current weather on Mars</h4>
+            <p>{{ space.weather }}</p>
+        </div>
+        <div class='col-md-4 offset-md-8'>
+            <h4>Mars Facts</h4>
+            {{  space.facts|safe }}
+        </div>
+    </section>
+    <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">Mars Hemispheres</h1>
+          <hr class="description-hr"/>
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">{{  space.hemispheres[0].title  }}</h2>
+          <img src="{{ space.hemispheres[0].img_url }}" alt="Latitude vs. Max Temperature" class="comparison-image img-responsive">
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">{{  space.hemispheres[1].title  }}</h2>
+          <img src="{{ space.hemispheres[1].img_url }}" alt="Latitude vs. Humidity" class="comparison-image img-responsive">
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">{{  space.hemispheres[2].title  }}</h2>
+          <img src="{{ space.hemispheres[2].img_url }}" alt="Latitude vs. Cloudiness" class="comparison-image img-responsive">
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">{{  space.hemispheres[3].title  }}</h2>
+          <img src="{{ space.hemispheres[3].img_url }}" alt="Latitude vs. Wind Speed" class="comparison-image img-responsive">
+          <p>{{ space.hemispheres[3].img_url }}"</p>
+        </div>
+      </article>
+  </div>
+
+</body>
+
+</html>
