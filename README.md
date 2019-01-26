@@ -1,14 +1,17 @@
-# Python Web Scraping Example
+# Mars Data Web Scraping Script
 
 
-This repository contains a Python webscraping script, used to scrape data from twitter, nasa, astrogeology.usgs.gov, and space_facts.com, store that data in a mondgoDB database, and render the data from that database on a separate HTML file. The scrape script can be activated through a button on the HTML file. 
+This repository contains a Python webscraping script [scrape_mars.py], used to scrape data from twitter, nasa, astrogeology.usgs.gov, and space_facts.com, store that data in a dictionary to be later put in a mondgoDB database. 
+
+The repository also contians a Python script [app.py] used to create a local Flask server to render the HTML file with the scraped data, run scrape_mars.py, and store and pull the scraped data into the database.
 
 Libraries Used:
 - Pandas
 - BeautifulSoup
 - Requests
 - Splinter
-- Pymongo
+- PyMongo
+- Flask
 
 
 
